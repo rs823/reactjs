@@ -53,7 +53,7 @@ jobs:
           ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
           ssh -o StrictHostKeyChecking=no "${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}" << 'EOF'
             cd ~/reactjs
-            git pull origin dev
+            git pull
             npm install
             npm run build
             pm2 restart all  # Or the command you use to restart your app
